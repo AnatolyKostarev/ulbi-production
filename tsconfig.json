@@ -7,6 +7,8 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
+    // для абсолютного импорта
+    "baseUrl": ".",
     // вместо commonJS позволяет использовать import/export
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
