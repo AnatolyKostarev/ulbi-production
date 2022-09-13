@@ -8,7 +8,7 @@
     "allowJs": true,
     "moduleResolution": "node",
     // для абсолютного импорта
-    "baseUrl": ".",
+//    "baseUrl": ".",
     // вместо commonJS позволяет использовать import/export
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
