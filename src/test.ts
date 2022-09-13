@@ -1,4 +1,4 @@
 export function someFn(arg: number): string {
-    console.log("Random function done");
+    document.body.innerHTML ="<div style='color: red'>HELLO, WORLD!!!</div>";
     return ''
 }
