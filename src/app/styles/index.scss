@@ -1,5 +1,5 @@
 @import "reset";
-@import "variables/global";
+@import 'variables/global';
 @import "themes/normal";
 @import "themes/dark";
 
@@ -11,6 +11,11 @@
   color: var(--primary-color);
 }
 
-a {
-  color: #fff;
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  padding: 20px;
+  flex-grow: 1;
 }
