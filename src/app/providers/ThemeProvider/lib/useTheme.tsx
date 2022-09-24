@@ -1,5 +1,5 @@
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
-import { useContext } from "react";
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
+import { useContext } from 'react';
 
 // делаем интерфейс и определяем типы данных, которые он будет возвращать
 
