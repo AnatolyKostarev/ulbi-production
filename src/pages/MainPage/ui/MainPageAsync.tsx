@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 export const MainPageAsync = React.lazy(
   () =>
-    new Promise((resolve) => {
+    new Promise(resolve => {
       // @ts-ignore
       //так в реальных проектах не делать. Используем только для курса.
-      setTimeout(() => resolve(import("./MainPage")), 1500);
+      setTimeout(() => resolve(import('./MainPage')), 1500);
     })
 );
