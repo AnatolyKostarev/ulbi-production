@@ -1,31 +1,65 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: [
-    "plugin:react/recommended",
-    "airbnb",
-    "eslint:all",
-    "plugin:react/all",
-  ],
-  overrides: [],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+    env: {
+        browser: true,
+        es2021: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  plugins: ["react"],
-  rules: {
-    "react/jsx-filename-extension": [
-      2,
-      {
-        extensions: [".js", ".jsx", ".tsx"],
-      },
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'eslint:all',
+        'plugin:react/all',
+        'plugin:i18next/recommended',
+
     ],
-    "react/jsx-indent": [2, 4],
-  },
+    globals: {
+        __IS_DEV__: true,
+    },
+    overrides: [],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    plugins: ['react', 'i18next'],
+    rules: {
+        'func-style': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'id-length': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'import/no-unresolved': 'off',
+        'import/prefer-default-export': 'off',
+        indent: [2, 4],
+        'init-declarations': ['error', 'never'],
+        'max-lines-per-function': 'off',
+        'no-magic-numbers': 'off',
+        'no-shadow': 'off',
+        'no-ternary': 'off',
+        'no-undefined': 'off',
+        'no-underscore-dangle': 'off',
+        'no-unused-vars': 'warn',
+        'prefer-named-capture-group': 'off',
+        'react/function-component-definition': 'off',
+        'react/jsx-filename-extension': [2,
+            {
+                extensions: ['.js',
+                    '.jsx',
+                    '.ts',
+                    '.tsx'],
+            }],
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+        'react/jsx-props-no-spreading': 'warn',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-no-literals': 'off',
+        'react/jsx-max-depth': 'off',
+        'react/jsx-newline': 'off',
+        'react/require-default-props': 'off',
+        'require-unicode-regexp': 'off',
+        'sort-imports': 'off',
+        'sort-keys': 'off',
+    },
 };
