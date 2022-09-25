@@ -3,9 +3,9 @@ import { BuildOptions } from './types/config';
 
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     return {
+        port: options.port,
+        open: true,
         historyApiFallback: true,
         hot: true,
-        open: true,
-        port: options.port,
     };
 }
