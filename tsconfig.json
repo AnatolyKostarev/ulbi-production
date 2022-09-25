@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -10,9 +12,7 @@
     // для абсолютного импорта
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "./src/*"
-      ]
+      "*": ["./src/*"]
     },
     // вместо commonJS позволяет использовать import/export
     "esModuleInterop": true,
