@@ -11,5 +11,7 @@
   "Главная": "Main",
   "О сайте": "About us",
   "toggle": "Toggle",
-  "короткий язык": "EN"
+  "короткий язык": "EN",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
