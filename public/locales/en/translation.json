@@ -5,13 +5,14 @@
   "Язык": "English",
   "новый перевод": "новый перевод",
   "Страница не найдена": "Page not found",
-  "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
   "Главная": "Main",
   "О сайте": "About us",
-  "toggle": "Toggle",
-  "короткий язык": "EN",
-  "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Переключить": "Переключить",
+  "Короткий язык": "En",
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }

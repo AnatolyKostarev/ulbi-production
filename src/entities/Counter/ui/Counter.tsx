@@ -16,6 +16,7 @@ export const Counter = () => {
     const decrement = () => {
         dispatch(counterActions.decrement());
     };
+
     return (
         <div>
             <h1 data-testid="value-title">{counterValue}</h1>
@@ -23,13 +24,13 @@ export const Counter = () => {
                 onClick={increment}
                 data-testid="increment-btn"
             >
-                {t('Increment')}
+                {t('increment')}
             </Button>
             <Button
-                onClick={decrement}
                 data-testid="decrement-btn"
+                onClick={decrement}
             >
-                {t('Decrement')}
+                {t('decrement')}
             </Button>
         </div>
     );
