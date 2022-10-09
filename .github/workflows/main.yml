@@ -1,12 +1,11 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
-  piplene:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -15,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/checkout@v1
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
@@ -28,15 +27,12 @@ jobs:
         if: always()
       - name: linting css
         run: npm run lint:scss
-        if: always()
       - name: unit testing
-        run: npm run test:unit
         if: always()
+        run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
-
-
-
+        if: always()

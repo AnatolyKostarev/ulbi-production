@@ -1,14 +1,15 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
-// const jwt = require('jsonwebtoken');
 const path = require('path');
 
 const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
-// Нужно для небольшой задержки. имитация реального API
+server.use(jsonServer.defaults({}));
+server.use(jsonServer.bodyParser);
 
+// Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
     await new Promise((res) => {
         setTimeout(res, 800);
@@ -16,38 +17,41 @@ server.use(async (req, res, next) => {
     next();
 });
 
-// Проверка авторизации пользователя
+// Эндпоинт для логина
+server.post('/login', (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+        const { users = [] } = db;
 
-// eslint-disable-next-line consistent-return
+        const userFromBd = users.find(
+            (user) => user.username === username && user.password === password,
+        );
+
+        if (userFromBd) {
+            return res.json(userFromBd);
+        }
+
+        return res.status(403).json({ message: 'User not found' });
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json({ message: e.message });
+    }
+});
+
+// проверяем, авторизован ли пользователь
+// eslint-disable-next-line
 server.use((req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(403).json({ message: 'AUTH ERROR' });
     }
+
     next();
 });
 
-server.use(jsonServer.defaults());
 server.use(router);
 
-// Эндпоинт для логина
-
-server.post('login', (req, res) => {
-    const { username, password } = req.body;
-    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
-    const { users } = db;
-
-    const userFromBd = users.find(
-        (user) => user.username === username && user.password === password,
-    );
-
-    if (userFromBd) {
-        return res.json(userFromBd);
-    }
-    return res.status(403).json({ message: 'AUTH ERROR' });
-});
-
-// Запуск сервера
-
+// запуск сервера
 server.listen(8000, () => {
-    console.log('Server is running on 8000 port');
+    console.log('server is running on 8000 port');
 });
