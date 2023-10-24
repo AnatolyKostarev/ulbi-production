@@ -1,11 +1,4 @@
 import axios from 'axios';
-<<<<<<< HEAD
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import {
-    loginByUsername,
-} from './loginByUsername';
-=======
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
@@ -13,7 +6,6 @@ import {
     loginByUsername,
 } from './loginByUsername';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
->>>>>>> c238006 (Add test for login module)
 
 // jest.mock('axios');
 // const mockedAxios = jest.mocked(axios, true);
