@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Anatoly",
+    "lastname": "Kostarev",
+    "age": 47,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "SPb",
+    "username": "admin",
+    "avatar": "https://cs6.pikabu.ru/avatars/1530/v1530482-697214813.jpg"
+  }
 }

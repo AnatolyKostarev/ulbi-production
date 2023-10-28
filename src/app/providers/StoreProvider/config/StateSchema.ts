@@ -1,5 +1,6 @@
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
+import { ProfileSchema } from 'entities/Profile';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction,
@@ -14,7 +15,8 @@ export interface StateSchema {
   user: UserSchema
 
   // Асинхронные редьюсеры
-  loginForm?: LoginSchema
+  loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
