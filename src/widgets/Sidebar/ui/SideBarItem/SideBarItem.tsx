@@ -9,7 +9,7 @@ interface SideBarItemProps {
     item: SideBarItemType;
     collapsed: boolean;
 }
-const SideBarItem = memo(({ item, collapsed}: SideBarItemProps) => {
+const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
     const { t } = useTranslation();
 
     return (
