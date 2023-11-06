@@ -14,5 +14,8 @@
   "Короткий язык": "En",
   "Войти": "Login",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Профиль": "Profile",
+  "Ваше имя": "First Name",
+  "Ваша фамилия": "Last Name"
 }
